@@ -5,6 +5,7 @@ import (
 	"exercism/cars_assemble"
 	"exercism/hamming"
 	"exercism/lasagna"
+	"exercism/tech_palace"
 	"exercism/twofer"
 	"fmt"
 )
@@ -19,7 +20,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Annalyn()
+	Tech_palace()
 }
 
 func Twofer() {
@@ -86,4 +87,20 @@ func Annalyn() {
 	fmt.Println("Can Spy : ", annalyn.CanSpy(knightIsAwake, archerIsAwake, prisonerIsAwake))
 	fmt.Println("Can Signal Prisoner : ", annalyn.CanSignalPrisoner(archerIsAwake, prisonerIsAwake))
 	fmt.Println("Can Free Prisoner : ", annalyn.CanFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, false))
+}
+
+func Tech_palace() {
+	var customer string
+	message := `
+**************************
+*    BUY NOW, SAVE 10%   *
+**************************
+`
+
+	fmt.Println("Enter customer : ")
+	fmt.Scan(&customer)
+
+	fmt.Println(tech_palace.WelcomeMessage(customer))
+	fmt.Println(tech_palace.AddBorder(tech_palace.WelcomeMessage(customer), 5))
+	fmt.Println(tech_palace.CleanupMessage(message))
 }
