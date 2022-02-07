@@ -11,8 +11,5 @@ func CalculateWorkingCarsPerMinute(productionRate int, successRate float64) int 
 func CalculateCost(carsCount int) uint {
 	const individualCost = 10000
 	const comboCost = 95000
-	if carsCount < 10 {
-		return uint(carsCount) * individualCost
-	}
 	return uint(carsCount/10)*comboCost + uint(carsCount%10)*individualCost
 }

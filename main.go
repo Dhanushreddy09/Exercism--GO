@@ -1,6 +1,7 @@
 package main
 
 import (
+	"exercism/annalyn"
 	"exercism/cars_assemble"
 	"exercism/hamming"
 	"exercism/lasagna"
@@ -18,7 +19,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Cars_assemble()
+	Annalyn()
 }
 
 func Twofer() {
@@ -67,4 +68,22 @@ func Cars_assemble() {
 	fmt.Scan(&successRate)
 
 	fmt.Println("Working cars per hour : ", cars_assemble.CalculateCost(148))
+}
+
+func Annalyn() {
+	var knightIsAwake, archerIsAwake, prisonerIsAwake bool
+
+	fmt.Println("Enter knightIsAwake : ")
+	fmt.Scan(&knightIsAwake)
+
+	fmt.Println("Enter archerIsAwake : ")
+	fmt.Scan(&archerIsAwake)
+
+	fmt.Println("Enter prisonerIsAwake : ")
+	fmt.Scan(&prisonerIsAwake)
+
+	fmt.Println("Can Fast Attack : ", annalyn.CanFastAttack(knightIsAwake))
+	fmt.Println("Can Spy : ", annalyn.CanSpy(knightIsAwake, archerIsAwake, prisonerIsAwake))
+	fmt.Println("Can Signal Prisoner : ", annalyn.CanSignalPrisoner(archerIsAwake, prisonerIsAwake))
+	fmt.Println("Can Free Prisoner : ", annalyn.CanFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, false))
 }
