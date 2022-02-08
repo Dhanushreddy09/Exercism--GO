@@ -5,8 +5,10 @@ import (
 	"exercism/cars_assemble"
 	"exercism/hamming"
 	"exercism/lasagna"
+	"exercism/party_robot"
 	"exercism/tech_palace"
 	"exercism/twofer"
+	"exercism/vehicle_purchase"
 	"fmt"
 )
 
@@ -20,7 +22,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Tech_palace()
+	Party_robot()
 }
 
 func Twofer() {
@@ -103,4 +105,54 @@ func Tech_palace() {
 	fmt.Println(tech_palace.WelcomeMessage(customer))
 	fmt.Println(tech_palace.AddBorder(tech_palace.WelcomeMessage(customer), 5))
 	fmt.Println(tech_palace.CleanupMessage(message))
+}
+
+func Vehicle_purchase() {
+	var kind, option1, option2 string
+
+	fmt.Println("Enter kind of vehicle : ")
+	fmt.Scan(&kind)
+
+	fmt.Println("Enter option 1 : ")
+	fmt.Scan(&option1)
+
+	fmt.Println("Enter option2 : ")
+	fmt.Scan(&option2)
+
+	fmt.Println(vehicle_purchase.NeedsLicense(kind))
+	fmt.Println(vehicle_purchase.ChooseVehicle(option1, option2))
+	fmt.Println(vehicle_purchase.CalculateResellPrice(10000.0, 5.0))
+}
+
+func Party_robot() {
+	var name, neighbor, direction string
+	var age, table int
+	var distance float64
+
+	fmt.Println("Enter name : ")
+	fmt.Scan(&name)
+
+	fmt.Println("Enter his neighbor's name : ")
+	fmt.Scan(&neighbor)
+
+	fmt.Println("Enter the direction : ")
+	fmt.Scan(&direction)
+
+	fmt.Println()
+
+	fmt.Println("Enter age : ")
+	fmt.Scan(&age)
+
+	fmt.Println("Enter the table no : ")
+	fmt.Scan(&table)
+
+	fmt.Println()
+
+	fmt.Println("Enter the distance: ")
+	fmt.Scan(&distance)
+
+	fmt.Println(party_robot.Welcome(name))
+	fmt.Println(party_robot.HappyBirthday(name, age))
+	fmt.Println(party_robot.AssignTable(name, table, neighbor, direction, distance))
+
 }
