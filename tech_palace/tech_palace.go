@@ -14,7 +14,7 @@ func AddBorder(welcomeMsg string, numStarsPerLine int) string {
 }
 
 func CleanupMessage(oldMsg string) string {
-	oldMsg = strings.Replace(oldMsg, "*", "", -1)
-	oldMsg = strings.TrimSpace(oldMsg)
-	return oldMsg
+	oldMsg = strings.ReplaceAll(oldMsg, "*", "")
+	return strings.TrimSpace(oldMsg)
+
 }
