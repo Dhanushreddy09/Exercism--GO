@@ -2,8 +2,10 @@ package main
 
 import (
 	"exercism/annalyn"
+	"exercism/blackjack"
 	"exercism/cars_assemble"
 	"exercism/hamming"
+	"exercism/interest_is_interesting"
 	"exercism/lasagna"
 	"exercism/party_robot"
 	"exercism/tech_palace"
@@ -22,7 +24,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Party_robot()
+	Interest_is_interesting()
 }
 
 func Twofer() {
@@ -154,5 +156,38 @@ func Party_robot() {
 	fmt.Println(party_robot.Welcome(name))
 	fmt.Println(party_robot.HappyBirthday(name, age))
 	fmt.Println(party_robot.AssignTable(name, table, neighbor, direction, distance))
+}
 
+func Blackjack() {
+	var card1, card2 string
+	var dealerScore, handScore int
+
+	fmt.Println("Enter card1 : ")
+	fmt.Scan(&card1)
+
+	fmt.Println("Enter card2 : ")
+	fmt.Scan(&card2)
+
+	fmt.Println("Enter dealer score : ")
+	fmt.Scan(&dealerScore)
+
+	fmt.Println("Enter handScore : ")
+	fmt.Scan(&handScore)
+
+	fmt.Println(blackjack.ParseCard(card1))
+	blackjackVal := blackjack.IsBlackjack(card1, card2)
+	fmt.Println(blackjack.LargeHand(blackjackVal, handScore))
+}
+
+func Interest_is_interesting() {
+	var balance, targetBalance float64
+
+	fmt.Println("Enter balance : ")
+	fmt.Scan(&balance)
+
+	fmt.Println("Enter targetBalance : ")
+	fmt.Scan(&targetBalance)
+
+	fmt.Println(interest_is_interesting.AnnualBalanceUpdate(balance))
+	fmt.Println(interest_is_interesting.YearsBeforeDesiredBalance(balance, targetBalance))
 }
