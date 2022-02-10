@@ -3,6 +3,7 @@ package main
 import (
 	"exercism/annalyn"
 	"exercism/blackjack"
+	"exercism/card_tricks"
 	"exercism/cars_assemble"
 	"exercism/hamming"
 	"exercism/interest_is_interesting"
@@ -24,7 +25,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Interest_is_interesting()
+	Card_tricks()
 }
 
 func Twofer() {
@@ -190,4 +191,10 @@ func Interest_is_interesting() {
 
 	fmt.Println(interest_is_interesting.AnnualBalanceUpdate(balance))
 	fmt.Println(interest_is_interesting.YearsBeforeDesiredBalance(balance, targetBalance))
+}
+
+func Card_tricks() {
+	slice := []int{5, 6, 8, 10, 12}
+	fmt.Println(card_tricks.GetItem(slice, 2))
+	fmt.Println(card_tricks.SetItem(slice, 8, 7))
 }
