@@ -8,6 +8,7 @@ import (
 	"exercism/hamming"
 	"exercism/interest_is_interesting"
 	"exercism/lasagna"
+	"exercism/need_for_speed"
 	"exercism/party_robot"
 	"exercism/tech_palace"
 	"exercism/twofer"
@@ -25,7 +26,7 @@ func main() {
 
 	//Below is an example for your reference
 
-	Card_tricks()
+	Need_for_speed()
 }
 
 func Twofer() {
@@ -197,4 +198,21 @@ func Card_tricks() {
 	slice := []int{5, 6, 8, 10, 12}
 	fmt.Println(card_tricks.GetItem(slice, 2))
 	fmt.Println(card_tricks.SetItem(slice, 8, 7))
+}
+
+func Need_for_speed() {
+	var speed, batteryDrain, trackDistance int
+	fmt.Println("Enter the speed pf the vehicle : ")
+	fmt.Scan(&speed)
+
+	fmt.Println("Enter the battery drain : ")
+	fmt.Scan(&batteryDrain)
+
+	fmt.Println("Enter the track distance : ")
+	fmt.Scan(&trackDistance)
+
+	car := need_for_speed.NewCar(speed, batteryDrain)
+	track := need_for_speed.NewTrack(trackDistance)
+
+	fmt.Println(need_for_speed.CanFinish(car, track))
 }
