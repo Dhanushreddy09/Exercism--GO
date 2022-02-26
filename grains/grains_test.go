@@ -19,7 +19,7 @@ func testSquare(t *testing.T, i int, expected uint64) {
 }
 
 func TestSquare(t *testing.T) {
-	testSquare(t, 2, 4)
+	testSquare(t, 0, 1)
 }
 
 func BenchmarkSquare1(b *testing.B)  { benchmarkSquare(1, b) }
