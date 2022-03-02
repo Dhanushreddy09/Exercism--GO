@@ -4,9 +4,9 @@ import "fmt"
 
 func Elon() {
 	car := NewCar(100, 10)
-	car.Drive()
-	fmt.Println(car.DisplayDistance())
-	fmt.Println(car.DisplayBattery())
-	fmt.Println(car.CanFinish(100))
-	fmt.Println(car.CanFinish(200))
+	car.Drives()
+	fmt.Println(car.DisplayDistances())
+	fmt.Println(car.DisplayBatterys())
+	fmt.Println(car.CanFinishorNot(100))
+	fmt.Println(car.CanFinishorNot(200))
 }
