@@ -43,5 +43,5 @@ func Description(date string) string {
 }
 
 func AnniversaryDate() time.Time {
-	return Schedule("09/15/2020")
+	return time.Date(2020, time.September, 5, 0, 0, 0, 0, time.UTC)
 }
