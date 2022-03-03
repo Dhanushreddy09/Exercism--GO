@@ -3,7 +3,7 @@ package grains
 import "testing"
 
 func benchmarkSquare(i int, b *testing.B) {
-	for n := 0; i < b.N; n++ {
+	for n := 0; n < b.N; n++ {
 		Square(i)
 	}
 }
