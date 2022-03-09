@@ -3,25 +3,25 @@ package space_age
 type Planet string
 
 func Age(seconds float64, planet Planet) float64 {
-	var ans float64
 	earthYears := 31557600.00
+	var factor float64
 	switch planet {
 	case "Earth":
-		ans = seconds / earthYears
+		factor = 1
 	case "Mercury":
-		ans = seconds / (earthYears * 0.2408467)
+		factor = 0.2408467
 	case "Venus":
-		ans = seconds / (earthYears * 0.61519726)
+		factor = 0.61519726
 	case "Mars":
-		ans = seconds / (earthYears * 1.8808158)
+		factor = 1.8808158
 	case "Jupiter":
-		ans = seconds / (earthYears * 11.862615)
+		factor = 11.862615
 	case "Saturn":
-		ans = seconds / (earthYears * 29.447498)
+		factor = 29.447498
 	case "Uranus":
-		ans = seconds / (earthYears * 84.016846)
+		factor = 84.016846
 	case "Neptune":
-		ans = seconds / (earthYears * 164.79132)
+		factor = 164.79132
 	}
-	return ans
+	return seconds / (earthYears * factor)
 }
