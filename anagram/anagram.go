@@ -27,12 +27,7 @@ func Detect(subject string, candidates []string) []string {
 					contains = !contains
 					break
 				}
-				_, runeExists := candidateAlpha[candidateRune]
-				if !runeExists {
-					candidateAlpha[candidateRune] = 1
-				} else {
-					candidateAlpha[candidateRune]++
-				}
+				candidateAlpha[candidateRune]++
 				if candidateAlpha[candidateRune] > alphabets[candidateRune] {
 					contains = !contains
 				}
