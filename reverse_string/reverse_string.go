@@ -1,10 +1,9 @@
 package reverse_string
 
 func Reverse(input string) string {
-	var ans string
 	inputRune := []rune(input)
-	for i := len(inputRune) - 1; i >= 0; i-- {
-		ans += string(inputRune[i])
+	for i, j := 0, len(inputRune)-1; i < j; i, j = i+1, j-1 {
+		inputRune[i], inputRune[j] = inputRune[j], inputRune[i]
 	}
-	return ans
+	return string(inputRune)
 }
