@@ -6,7 +6,7 @@ type Histogram map[rune]int
 type DNA string
 
 func (d DNA) Counts() (Histogram, error) {
-	h := Histogram{65: 0, 67: 0, 71: 0, 84: 0}
+	h := Histogram{'A': 0, 'C': 0, 'G': 0, 'T': 0}
 	for _, val := range d {
 		_, exists := h[val]
 		if !exists {
