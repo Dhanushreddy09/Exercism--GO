@@ -17,19 +17,23 @@ func (i Ints) Keep(filter func(int) bool) Ints {
 func (i Ints) Discard(filter func(int) bool) Ints {
 	var ans Ints
 	for _, val := range i {
-		if !filterInt(val) {
+		if !filter(val) {
 			ans = append(ans, val)
 		}
 	}
 	return ans
 }
 
-func (l Lists) Keep(filter func([]int) bool) Lists {
+func (l Lists) Keep(filter func(int) bool) Lists {
 	var ans Lists
 	for _, val := range l {
-		if filterArray(val) {
-			ans = append(ans, val)
+		var arr []int
+		for _, item := range val {
+			if filter(item) {
+				arr = append(arr, item)
+			}
 		}
+		ans = append(ans, arr)
 	}
 	return ans
 }
@@ -37,7 +41,7 @@ func (l Lists) Keep(filter func([]int) bool) Lists {
 func (s Strings) Keep(filter func(string) bool) Strings {
 	var ans Strings
 	for _, val := range s {
-		if filterString(val) {
+		if filter(val) {
 			ans = append(ans, val)
 		}
 	}
@@ -50,8 +54,4 @@ func filterInt(i int) bool {
 
 func filterString(s string) bool {
 	return len(s) > 6
-}
-
-func filterArray(a []int) bool {
-	return a[0]%2 == 0
 }
