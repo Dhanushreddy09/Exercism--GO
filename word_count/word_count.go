@@ -12,13 +12,8 @@ func WordCount(phrase string) Frequency {
 	phrase = strings.ToLower(phrase)
 	words := strings.FieldsFunc(phrase, Split)
 	for _, val := range words {
-		val = strings.TrimLeft(strings.TrimRight(val, "'"), "'")
-		_, wordExists := ans[val]
-		if !wordExists {
-			ans[val] = 1
-		} else {
-			ans[val]++
-		}
+		val = strings.Trim(val, "'")
+		ans[val]++
 	}
 	return ans
 }

@@ -5,6 +5,6 @@ import (
 )
 
 func Word_count() {
-	phrase := "testing, 1, 2 testing"
+	phrase := "First: don't laugh. Then: don't cry"
 	fmt.Println(WordCount(phrase))
 }
